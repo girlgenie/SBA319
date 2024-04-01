@@ -5,6 +5,11 @@ const port = 3000;
 const courses = require('./data/collegecourses');
 const collegeCourses = require('./data/collegecourses');
 
+const connectDB = require('./data/db')
+
+// mongodb+srv://rockellegardner:<password>@sba319.byijayw.mongodb.net/?retryWrites=true&w=majority&appName=SBA319
+
+connectDB()
 
 
 // PARSER
