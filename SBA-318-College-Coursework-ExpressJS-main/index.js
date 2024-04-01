@@ -6,10 +6,12 @@ const courses = require('./data/collegecourses');
 const collegeCourses = require('./data/collegecourses');
 
 const connectDB = require('./data/db')
+const itemModel = require('./data/models/item.js')
 
 // mongodb+srv://rockellegardner:<password>@sba319.byijayw.mongodb.net/?retryWrites=true&w=majority&appName=SBA319
 
 connectDB()
+itemModel()
 
 
 // PARSER
