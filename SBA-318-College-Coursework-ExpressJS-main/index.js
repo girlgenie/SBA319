@@ -4,6 +4,7 @@ const app = express(); //APPLICATION
 const port = 3000; 
 const courses = require('./data/collegecourses');
 const collegeCourses = require('./data/collegecourses');
+const cors = require('cors')
 
 const connectDB = require('./data/db')
 const itemModel = require('./data/models/item.js')
@@ -16,12 +17,19 @@ itemModel()
 
 // PARSER
 app.use(express.json());
+app.use(cors())
 
 
 // HTTP METHODS
 app.get('/', (req,res)=> { 
     res.send('SBA EXPRESS COLLEGE COURSE DEMO'); 
+
 });
+
+app.get('/', (req,res) => { 
+    const items = itemModel.find()
+        res.json(items)
+})
 
 // ALL COURSES END POINT
 app.get('/api/collegecourses', (req, res) => {
